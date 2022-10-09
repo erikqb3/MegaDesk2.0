@@ -1,0 +1,14 @@
+{
+  "customerName": "",
+  "quoteTotalPrice": 530.00,
+  "finishDate": "2022-10-07T17:39:46.2204346-06:00",
+  "contactMethod": "phone",
+  "contactInfo": "",
+  "deskProperties": {
+    "width": 24,
+    "depth": 12,
+    "drawerCount": 0,
+    "material": "Rosewood",
+    "expectancy": 14
+  }
+}

@@ -1,4 +1,4 @@
-﻿namespace MegaDesk1._0
+﻿namespace MegaDesk2._0
 {
     partial class MainMenu
     {
@@ -33,6 +33,7 @@
             this.searchQuote_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.menuImg = new System.Windows.Forms.PictureBox();
+            this.JSON_INFO = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.menuImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,17 +83,29 @@
             // 
             // menuImg
             // 
-            this.menuImg.Location = new System.Drawing.Point(421, 51);
+            this.menuImg.ErrorImage = global::MegaDesk1._0.Properties.Resources.desk;
+            this.menuImg.ImageLocation = "../Resources/desk.jpg";
+            this.menuImg.Location = new System.Drawing.Point(422, 85);
             this.menuImg.Name = "menuImg";
             this.menuImg.Size = new System.Drawing.Size(322, 307);
             this.menuImg.TabIndex = 4;
             this.menuImg.TabStop = false;
+            // 
+            // JSON_INFO
+            // 
+            this.JSON_INFO.AutoSize = true;
+            this.JSON_INFO.Location = new System.Drawing.Point(540, 417);
+            this.JSON_INFO.Name = "JSON_INFO";
+            this.JSON_INFO.Size = new System.Drawing.Size(77, 16);
+            this.JSON_INFO.TabIndex = 5;
+            this.JSON_INFO.Text = "JSON INFO";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.JSON_INFO);
             this.Controls.Add(this.menuImg);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.searchQuote_btn);
@@ -102,6 +115,7 @@
             this.Text = "Mega Desk Co.";
             ((System.ComponentModel.ISupportInitialize)(this.menuImg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,6 +126,7 @@
         private System.Windows.Forms.Button searchQuote_btn;
         private System.Windows.Forms.Button exit_btn;
         private System.Windows.Forms.PictureBox menuImg;
+        private System.Windows.Forms.Label JSON_INFO;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace MegaDesk1._0
+﻿namespace MegaDesk2._0
 {
     partial class Add_Quote
     {
@@ -69,6 +69,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.quoteCount = new System.Windows.Forms.Label();
             cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.width_input)).BeginInit();
             this.deskProperties_box.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // cancel_btn
             // 
-            cancel_btn.Location = new System.Drawing.Point(281, 383);
+            cancel_btn.Location = new System.Drawing.Point(281, 415);
             cancel_btn.Name = "cancel_btn";
             cancel_btn.Size = new System.Drawing.Size(75, 23);
             cancel_btn.TabIndex = 1;
@@ -90,7 +91,7 @@
             // 
             // getQuote_btn
             // 
-            this.getQuote_btn.Location = new System.Drawing.Point(461, 383);
+            this.getQuote_btn.Location = new System.Drawing.Point(461, 415);
             this.getQuote_btn.Name = "getQuote_btn";
             this.getQuote_btn.Size = new System.Drawing.Size(75, 23);
             this.getQuote_btn.TabIndex = 0;
@@ -139,7 +140,7 @@
             this.deskProperties_box.Controls.Add(this.width_input);
             this.deskProperties_box.Location = new System.Drawing.Point(280, 37);
             this.deskProperties_box.Name = "deskProperties_box";
-            this.deskProperties_box.Size = new System.Drawing.Size(256, 306);
+            this.deskProperties_box.Size = new System.Drawing.Size(256, 347);
             this.deskProperties_box.TabIndex = 3;
             this.deskProperties_box.TabStop = false;
             this.deskProperties_box.Text = "Desk Properties";
@@ -292,6 +293,7 @@
             // clientInfoBox
             // 
             this.clientInfoBox.BackColor = System.Drawing.SystemColors.Control;
+            this.clientInfoBox.Controls.Add(this.quoteCount);
             this.clientInfoBox.Controls.Add(this.email_input);
             this.clientInfoBox.Controls.Add(this.phone_input);
             this.clientInfoBox.Controls.Add(this.contactData_input);
@@ -301,7 +303,7 @@
             this.clientInfoBox.Controls.Add(this.clientName_label);
             this.clientInfoBox.Location = new System.Drawing.Point(12, 37);
             this.clientInfoBox.Name = "clientInfoBox";
-            this.clientInfoBox.Size = new System.Drawing.Size(256, 306);
+            this.clientInfoBox.Size = new System.Drawing.Size(256, 347);
             this.clientInfoBox.TabIndex = 4;
             this.clientInfoBox.TabStop = false;
             this.clientInfoBox.Text = "Client Info";
@@ -392,10 +394,10 @@
             this.PricingBox.Controls.Add(this.label8);
             this.PricingBox.Location = new System.Drawing.Point(548, 37);
             this.PricingBox.Name = "PricingBox";
-            this.PricingBox.Size = new System.Drawing.Size(256, 306);
+            this.PricingBox.Size = new System.Drawing.Size(256, 347);
             this.PricingBox.TabIndex = 13;
             this.PricingBox.TabStop = false;
-            this.PricingBox.Text = "Pricing";
+            this.PricingBox.Text = "Quote";
             // 
             // totalCost
             // 
@@ -541,11 +543,20 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Base Desk Price";
             // 
+            // quoteCount
+            // 
+            this.quoteCount.AutoSize = true;
+            this.quoteCount.Location = new System.Drawing.Point(81, 305);
+            this.quoteCount.Name = "quoteCount";
+            this.quoteCount.Size = new System.Drawing.Size(93, 16);
+            this.quoteCount.TabIndex = 9;
+            this.quoteCount.Text = "Quote Count = ";
+            // 
             // Add_Quote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 450);
+            this.ClientSize = new System.Drawing.Size(818, 464);
             this.Controls.Add(this.PricingBox);
             this.Controls.Add(this.clientInfoBox);
             this.Controls.Add(this.deskProperties_box);
@@ -609,5 +620,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label quoteCount;
     }
 }

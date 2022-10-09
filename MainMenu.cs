@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk1._0
+namespace MegaDesk2._0
 {
     public partial class MainMenu : Form
     {
+        public int quoteCounter = 2;
         public MainMenu()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace MegaDesk1._0
         private void addQuote_btn_Click(object sender, EventArgs e)
         {
             //create and show Add Quote form
-            var addQuote = new Add_Quote(this);
+            var addQuote = new Add_Quote(this, this.quoteCounter);
             addQuote.Show();
 
             //hide Main Menu
