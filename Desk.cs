@@ -30,7 +30,7 @@ namespace MegaDesk2._0
         public int width { get; set; }
         public int depth { get; set; }
         public int drawerCount { get; set; }
-        public string material { get; set; }
+        public string material { get; set; } //Make it public DesktopMaterial material {get;set;}
         public int expectancy { get; set; }
 
 

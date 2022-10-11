@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,14 +20,28 @@ namespace MegaDesk2._0
         internal DeskQuote quoteProperites = new DeskQuote();
 
         public int quoteCountFromMain;
+        public string jsonPath = @"../../Resources/quoteList.json";
+
+        List<DesktopMaterial> materials = Enum.GetValues(typeof(DesktopMaterial))
+            .Cast<DesktopMaterial>()
+            .ToList();
         
 
-        
+
+
         public Add_Quote(Form mainMenu, int quoteCounter) //CONSTRUCTOR
         {
             InitializeComponent();
             _mainMenu = mainMenu;
             this.quoteCountFromMain = quoteCounter;
+            
+            material_input.DataSource = materials;
+            width_input.Text = String.Empty;
+            depth_input.Text = String.Empty;
+            drawerCount_input.Text = String.Empty;
+            days_input.Text = String.Empty;
+            
+
 
             quoteCount.Text = "Quote Count = " + this.quoteCountFromMain.ToString();
         }
@@ -175,7 +190,7 @@ namespace MegaDesk2._0
             deskProperties.width = int.Parse(width_input.Value.ToString());
             deskProperties.depth = int.Parse(depth_input.Value.ToString());
             deskProperties.drawerCount = int.Parse(drawerCount_input.Value.ToString());
-            deskProperties.material = material_input.Text;
+            deskProperties.material = material_input.Text; // turn back to enum //(DesktopMaterial)
             deskProperties.expectancy = int.Parse(days_input.Text);
 
             dq.deskProperties = deskProperties;
@@ -216,14 +231,27 @@ namespace MegaDesk2._0
         private void readWriteToJson(DeskQuote quoteObject, string jsonPath)
         {
             string existingJson;
-            QuoteList qL = new QuoteList();
-            ;
+            //list QuoteList qL = new QuoteList();
+            List<DeskQuote> deskQuoteList = new List<DeskQuote>();
 
-            using (var reader = new StreamReader(jsonPath))
+            if (File.Exists(jsonPath))
             {
-                existingJson = reader.ReadToEnd();
+                using (var reader = new StreamReader(jsonPath))
+                {
+                    existingJson = reader.ReadToEnd();
+                    if(existingJson.Length > 0)
+                    {
+                        deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+                    }
+                }
+                
             }
-            var existingJson_Object = JsonConvert.DeserializeObject<DeskQuote>(existingJson);
+            deskQuoteList.Add(quoteObject);
+
+            var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+            File.WriteAllText(jsonPath, finalQuoteList);
+
+
 
             //using (var writer = new StreamWriter(jsonPath))
             //{
@@ -234,7 +262,7 @@ namespace MegaDesk2._0
 
 
 
-            quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
+            //quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
         }
         private void rushOrder_no_Click(object sender, EventArgs e)
         {
@@ -254,21 +282,24 @@ namespace MegaDesk2._0
             this.quoteCountFromMain++;
             DeskQuote quote = this.establichQuoteDetails();
             saveQuote(quote);
-            //this.Close();
+            this.Close();
         }
         private void saveQuote(DeskQuote quoteObject)
         {
-            string jsonPath = @"../../Resources/quoteList1.json";
-            
 
-            try {
-                readWriteToJson(quoteObject, jsonPath);
-                Console.Write("readWrite");
-            }
-            catch {
-                createWriteJson(quoteObject, jsonPath);
-                Console.Write("createWrite");
-            }
+
+            //string jsonPath = @"../../Resources/quoteList2.json";
+            readWriteToJson(quoteObject, jsonPath);
+            Console.Write("readWrite");
+
+            //try {
+            //    readWriteToJson(quoteObject, jsonPath);
+            //    Console.Write("readWrite");
+            //}
+            //catch {
+            //    createWriteJson(quoteObject, jsonPath);
+            //    Console.Write("createWrite");
+            //}
         }
         private void width_input_ValueChanged(object sender, EventArgs e)
         {

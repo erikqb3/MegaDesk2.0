@@ -45,6 +45,7 @@
             this.drawerCount_input = new System.Windows.Forms.NumericUpDown();
             this.width_label = new System.Windows.Forms.Label();
             this.clientInfoBox = new System.Windows.Forms.GroupBox();
+            this.quoteCount = new System.Windows.Forms.Label();
             this.email_input = new System.Windows.Forms.RadioButton();
             this.phone_input = new System.Windows.Forms.RadioButton();
             this.contactData_input = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.quoteCount = new System.Windows.Forms.Label();
             cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.width_input)).BeginInit();
             this.deskProperties_box.SuspendLayout();
@@ -157,12 +157,10 @@
             // rushOrder_no
             // 
             this.rushOrder_no.AutoSize = true;
-            this.rushOrder_no.Checked = true;
             this.rushOrder_no.Location = new System.Drawing.Point(79, 257);
             this.rushOrder_no.Name = "rushOrder_no";
             this.rushOrder_no.Size = new System.Drawing.Size(46, 20);
             this.rushOrder_no.TabIndex = 21;
-            this.rushOrder_no.TabStop = true;
             this.rushOrder_no.Text = "No";
             this.rushOrder_no.UseVisualStyleBackColor = true;
             this.rushOrder_no.Click += new System.EventHandler(this.rushOrder_no_Click);
@@ -179,17 +177,10 @@
             // material_input
             // 
             this.material_input.FormattingEnabled = true;
-            this.material_input.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.material_input.Location = new System.Drawing.Point(24, 174);
             this.material_input.Name = "material_input";
             this.material_input.Size = new System.Drawing.Size(211, 24);
             this.material_input.TabIndex = 18;
-            this.material_input.Text = "Oak";
             this.material_input.SelectedIndexChanged += new System.EventHandler(this.material_input_SelectedIndexChanged);
             // 
             // days_label
@@ -213,7 +204,6 @@
             this.days_input.Name = "days_input";
             this.days_input.Size = new System.Drawing.Size(72, 24);
             this.days_input.TabIndex = 22;
-            this.days_input.Text = "14";
             this.days_input.SelectedIndexChanged += new System.EventHandler(this.days_input_SelectedIndexChanged);
             // 
             // rushOrder_yes
@@ -308,6 +298,15 @@
             this.clientInfoBox.TabStop = false;
             this.clientInfoBox.Text = "Client Info";
             // 
+            // quoteCount
+            // 
+            this.quoteCount.AutoSize = true;
+            this.quoteCount.Location = new System.Drawing.Point(81, 305);
+            this.quoteCount.Name = "quoteCount";
+            this.quoteCount.Size = new System.Drawing.Size(93, 16);
+            this.quoteCount.TabIndex = 9;
+            this.quoteCount.Text = "Quote Count = ";
+            // 
             // email_input
             // 
             this.email_input.AutoSize = true;
@@ -322,12 +321,10 @@
             // phone_input
             // 
             this.phone_input.AutoSize = true;
-            this.phone_input.Checked = true;
             this.phone_input.Location = new System.Drawing.Point(18, 113);
             this.phone_input.Name = "phone_input";
             this.phone_input.Size = new System.Drawing.Size(67, 20);
             this.phone_input.TabIndex = 7;
-            this.phone_input.TabStop = true;
             this.phone_input.Text = "Phone";
             this.phone_input.UseVisualStyleBackColor = true;
             this.phone_input.Click += new System.EventHandler(this.phone_input_Click);
@@ -542,15 +539,6 @@
             this.label8.Size = new System.Drawing.Size(108, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Base Desk Price";
-            // 
-            // quoteCount
-            // 
-            this.quoteCount.AutoSize = true;
-            this.quoteCount.Location = new System.Drawing.Point(81, 305);
-            this.quoteCount.Name = "quoteCount";
-            this.quoteCount.Size = new System.Drawing.Size(93, 16);
-            this.quoteCount.TabIndex = 9;
-            this.quoteCount.Text = "Quote Count = ";
             // 
             // Add_Quote
             // 
