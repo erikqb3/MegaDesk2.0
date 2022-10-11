@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk1._0
+namespace MegaDesk2._0
 {
-    internal class DeskQuote
+    public class DeskQuote
     {
-        public string CustomerName { get; set; }
-        public decimal QuotePrice { get; set; }
-        public DateTime DateTime { get; set; }
-        public string contactForm { get; set; }
+        public string customerName { get; set; }
+        public decimal quoteTotalPrice { get; set; }
+        public DateTime finishDate { get; set; }
+        public string contactMethod { get; set; }
         public string contactInfo { get; set; }
+        public Desk deskProperties { get;set; }
 
-        DeskQuote()
-        {
-
-        }
     }
 }

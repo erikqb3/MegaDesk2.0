@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk1._0
+namespace MegaDesk2._0
 {
     public partial class View_All_Quotes : Form
     {

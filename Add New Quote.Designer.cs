@@ -1,4 +1,4 @@
-﻿namespace MegaDesk1._0
+﻿namespace MegaDesk2._0
 {
     partial class Add_Quote
     {
@@ -45,6 +45,7 @@
             this.drawerCount_input = new System.Windows.Forms.NumericUpDown();
             this.width_label = new System.Windows.Forms.Label();
             this.clientInfoBox = new System.Windows.Forms.GroupBox();
+            this.quoteCount = new System.Windows.Forms.Label();
             this.email_input = new System.Windows.Forms.RadioButton();
             this.phone_input = new System.Windows.Forms.RadioButton();
             this.contactData_input = new System.Windows.Forms.TextBox();
@@ -80,7 +81,7 @@
             // 
             // cancel_btn
             // 
-            cancel_btn.Location = new System.Drawing.Point(281, 383);
+            cancel_btn.Location = new System.Drawing.Point(281, 415);
             cancel_btn.Name = "cancel_btn";
             cancel_btn.Size = new System.Drawing.Size(75, 23);
             cancel_btn.TabIndex = 1;
@@ -90,7 +91,7 @@
             // 
             // getQuote_btn
             // 
-            this.getQuote_btn.Location = new System.Drawing.Point(461, 383);
+            this.getQuote_btn.Location = new System.Drawing.Point(461, 415);
             this.getQuote_btn.Name = "getQuote_btn";
             this.getQuote_btn.Size = new System.Drawing.Size(75, 23);
             this.getQuote_btn.TabIndex = 0;
@@ -139,7 +140,7 @@
             this.deskProperties_box.Controls.Add(this.width_input);
             this.deskProperties_box.Location = new System.Drawing.Point(280, 37);
             this.deskProperties_box.Name = "deskProperties_box";
-            this.deskProperties_box.Size = new System.Drawing.Size(256, 306);
+            this.deskProperties_box.Size = new System.Drawing.Size(256, 347);
             this.deskProperties_box.TabIndex = 3;
             this.deskProperties_box.TabStop = false;
             this.deskProperties_box.Text = "Desk Properties";
@@ -156,12 +157,10 @@
             // rushOrder_no
             // 
             this.rushOrder_no.AutoSize = true;
-            this.rushOrder_no.Checked = true;
             this.rushOrder_no.Location = new System.Drawing.Point(79, 257);
             this.rushOrder_no.Name = "rushOrder_no";
             this.rushOrder_no.Size = new System.Drawing.Size(46, 20);
             this.rushOrder_no.TabIndex = 21;
-            this.rushOrder_no.TabStop = true;
             this.rushOrder_no.Text = "No";
             this.rushOrder_no.UseVisualStyleBackColor = true;
             this.rushOrder_no.Click += new System.EventHandler(this.rushOrder_no_Click);
@@ -178,17 +177,10 @@
             // material_input
             // 
             this.material_input.FormattingEnabled = true;
-            this.material_input.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.material_input.Location = new System.Drawing.Point(24, 174);
             this.material_input.Name = "material_input";
             this.material_input.Size = new System.Drawing.Size(211, 24);
             this.material_input.TabIndex = 18;
-            this.material_input.Text = "Oak";
             this.material_input.SelectedIndexChanged += new System.EventHandler(this.material_input_SelectedIndexChanged);
             // 
             // days_label
@@ -212,7 +204,6 @@
             this.days_input.Name = "days_input";
             this.days_input.Size = new System.Drawing.Size(72, 24);
             this.days_input.TabIndex = 22;
-            this.days_input.Text = "14";
             this.days_input.SelectedIndexChanged += new System.EventHandler(this.days_input_SelectedIndexChanged);
             // 
             // rushOrder_yes
@@ -292,6 +283,7 @@
             // clientInfoBox
             // 
             this.clientInfoBox.BackColor = System.Drawing.SystemColors.Control;
+            this.clientInfoBox.Controls.Add(this.quoteCount);
             this.clientInfoBox.Controls.Add(this.email_input);
             this.clientInfoBox.Controls.Add(this.phone_input);
             this.clientInfoBox.Controls.Add(this.contactData_input);
@@ -301,10 +293,19 @@
             this.clientInfoBox.Controls.Add(this.clientName_label);
             this.clientInfoBox.Location = new System.Drawing.Point(12, 37);
             this.clientInfoBox.Name = "clientInfoBox";
-            this.clientInfoBox.Size = new System.Drawing.Size(256, 306);
+            this.clientInfoBox.Size = new System.Drawing.Size(256, 347);
             this.clientInfoBox.TabIndex = 4;
             this.clientInfoBox.TabStop = false;
             this.clientInfoBox.Text = "Client Info";
+            // 
+            // quoteCount
+            // 
+            this.quoteCount.AutoSize = true;
+            this.quoteCount.Location = new System.Drawing.Point(81, 305);
+            this.quoteCount.Name = "quoteCount";
+            this.quoteCount.Size = new System.Drawing.Size(93, 16);
+            this.quoteCount.TabIndex = 9;
+            this.quoteCount.Text = "Quote Count = ";
             // 
             // email_input
             // 
@@ -320,12 +321,10 @@
             // phone_input
             // 
             this.phone_input.AutoSize = true;
-            this.phone_input.Checked = true;
             this.phone_input.Location = new System.Drawing.Point(18, 113);
             this.phone_input.Name = "phone_input";
             this.phone_input.Size = new System.Drawing.Size(67, 20);
             this.phone_input.TabIndex = 7;
-            this.phone_input.TabStop = true;
             this.phone_input.Text = "Phone";
             this.phone_input.UseVisualStyleBackColor = true;
             this.phone_input.Click += new System.EventHandler(this.phone_input_Click);
@@ -392,10 +391,10 @@
             this.PricingBox.Controls.Add(this.label8);
             this.PricingBox.Location = new System.Drawing.Point(548, 37);
             this.PricingBox.Name = "PricingBox";
-            this.PricingBox.Size = new System.Drawing.Size(256, 306);
+            this.PricingBox.Size = new System.Drawing.Size(256, 347);
             this.PricingBox.TabIndex = 13;
             this.PricingBox.TabStop = false;
-            this.PricingBox.Text = "Pricing";
+            this.PricingBox.Text = "Quote";
             // 
             // totalCost
             // 
@@ -545,7 +544,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 450);
+            this.ClientSize = new System.Drawing.Size(818, 464);
             this.Controls.Add(this.PricingBox);
             this.Controls.Add(this.clientInfoBox);
             this.Controls.Add(this.deskProperties_box);
@@ -609,5 +608,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label quoteCount;
     }
 }

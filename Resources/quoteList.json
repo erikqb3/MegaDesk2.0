@@ -1,0 +1,44 @@
+[
+  {
+    "customerName": "",
+    "quoteTotalPrice": 593.60,
+    "finishDate": "2022-10-10T11:48:45.0949602-06:00",
+    "contactMethod": "phone",
+    "contactInfo": "",
+    "deskProperties": {
+      "width": 24,
+      "depth": 12,
+      "drawerCount": 0,
+      "material": "Rosewood",
+      "expectancy": 3
+    }
+  },
+  {
+    "customerName": "",
+    "quoteTotalPrice": 318.00,
+    "finishDate": "2022-10-10T11:49:08.2996968-06:00",
+    "contactMethod": "phone",
+    "contactInfo": "",
+    "deskProperties": {
+      "width": 24,
+      "depth": 12,
+      "drawerCount": 0,
+      "material": "Laminate",
+      "expectancy": 14
+    }
+  },
+  {
+    "customerName": "",
+    "quoteTotalPrice": 638.12,
+    "finishDate": "2022-10-10T11:50:13.2381816-06:00",
+    "contactMethod": "phone",
+    "contactInfo": "",
+    "deskProperties": {
+      "width": 24,
+      "depth": 48,
+      "drawerCount": 0,
+      "material": "Oak",
+      "expectancy": 5
+    }
+  }
+]

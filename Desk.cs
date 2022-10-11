@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk1._0
+namespace MegaDesk2._0
 {
     public enum DesktopMaterial
     {
-        Laminated,
         Oak,
-        Rosewood,
-        Veneer,
+        Laminated,
         Pine,
-        Mahogany,
-        Birch
+        Rosewood,
+        Veneer
+
     }
-    internal class Desk
+    public class Desk
     {
         //CONSTANTS
         public const short MIN_WIDTH = 24;
@@ -28,8 +27,13 @@ namespace MegaDesk1._0
 
 
 
-        public float width { get; set; }
-        public float depth { get; set; }
+        public int width { get; set; }
+        public int depth { get; set; }
+        public int drawerCount { get; set; }
+        public string material { get; set; } //Make it public DesktopMaterial material {get;set;}
+        public int expectancy { get; set; }
+
+
 
         //public string DesktopMaterial DesktopMaterial { get;set }
     }
