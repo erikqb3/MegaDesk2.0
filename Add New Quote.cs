@@ -25,9 +25,6 @@ namespace MegaDesk2._0
         List<DesktopMaterial> materials = Enum.GetValues(typeof(DesktopMaterial))
             .Cast<DesktopMaterial>()
             .ToList();
-        
-
-
 
         public Add_Quote(Form mainMenu, int quoteCounter) //CONSTRUCTOR
         {
@@ -40,8 +37,6 @@ namespace MegaDesk2._0
             depth_input.Text = String.Empty;
             drawerCount_input.Text = String.Empty;
             days_input.Text = String.Empty;
-            
-
 
             quoteCount.Text = "Quote Count = " + this.quoteCountFromMain.ToString();
         }
@@ -119,7 +114,6 @@ namespace MegaDesk2._0
         }
         public double calculateTotals()
         {
-
             double basePrice = double.Parse(baseCost.Text.Substring(1));
             double sizePrice = double.Parse(sizeCost.Text.Substring(1));
             double drawerPrice = double.Parse(drawerCost.Text.Substring(1));
@@ -244,14 +238,11 @@ namespace MegaDesk2._0
                         deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
                     }
                 }
-                
             }
             deskQuoteList.Add(quoteObject);
 
             var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
             File.WriteAllText(jsonPath, finalQuoteList);
-
-
 
             //using (var writer = new StreamWriter(jsonPath))
             //{
@@ -259,8 +250,6 @@ namespace MegaDesk2._0
             //}
 
             //qL.listOfQuotes = [existingJson_Object, quoteObject];
-
-
 
             //quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
         }
@@ -286,8 +275,6 @@ namespace MegaDesk2._0
         }
         private void saveQuote(DeskQuote quoteObject)
         {
-
-
             //string jsonPath = @"../../Resources/quoteList2.json";
             readWriteToJson(quoteObject, jsonPath);
             Console.Write("readWrite");
@@ -306,8 +293,6 @@ namespace MegaDesk2._0
             calculateSize();
             calculateRushCost();
             calculateTotals();
-
         }
-
     }
 }
