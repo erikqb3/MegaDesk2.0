@@ -12,7 +12,6 @@ namespace MegaDesk2._0
 {
     public partial class MainMenu : Form
     {
-        public int quoteCounter = 2;
         public MainMenu()
         {
             InitializeComponent();
@@ -21,7 +20,7 @@ namespace MegaDesk2._0
         private void addQuote_btn_Click(object sender, EventArgs e)
         {
             //create and show Add Quote form
-            var addQuote = new Add_Quote(this, this.quoteCounter);
+            var addQuote = new Add_Quote(this);
             addQuote.Show();
 
             //hide Main Menu

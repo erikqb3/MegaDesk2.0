@@ -11,6 +11,7 @@ namespace MegaDesk2._0
     {
         public string customerName { get; set; }
         public decimal quoteTotalPrice { get; set; }
+        public string startDate { get; set; }
         public DateTime finishDate { get; set; }
         public string contactMethod { get; set; }
         public string contactInfo { get; set; }

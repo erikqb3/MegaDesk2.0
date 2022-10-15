@@ -40,5 +40,19 @@
       "material": "Oak",
       "expectancy": 5
     }
+  },
+  {
+    "customerName": "",
+    "quoteTotalPrice": 530.00,
+    "finishDate": "2022-10-11T09:01:12.5690418-06:00",
+    "contactMethod": null,
+    "contactInfo": "",
+    "deskProperties": {
+      "width": 26,
+      "depth": 17,
+      "drawerCount": 2,
+      "material": "Oak",
+      "expectancy": 14
+    }
   }
 ]

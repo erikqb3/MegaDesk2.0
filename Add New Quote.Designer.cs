@@ -45,7 +45,7 @@
             this.drawerCount_input = new System.Windows.Forms.NumericUpDown();
             this.width_label = new System.Windows.Forms.Label();
             this.clientInfoBox = new System.Windows.Forms.GroupBox();
-            this.quoteCount = new System.Windows.Forms.Label();
+            this.currentDate_label = new System.Windows.Forms.Label();
             this.email_input = new System.Windows.Forms.RadioButton();
             this.phone_input = new System.Windows.Forms.RadioButton();
             this.contactData_input = new System.Windows.Forms.TextBox();
@@ -70,6 +70,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.finishDate_label = new System.Windows.Forms.Label();
+            this.finishDate_value = new System.Windows.Forms.Label();
             cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.width_input)).BeginInit();
             this.deskProperties_box.SuspendLayout();
@@ -195,11 +197,6 @@
             // days_input
             // 
             this.days_input.FormattingEnabled = true;
-            this.days_input.Items.AddRange(new object[] {
-            "3",
-            "5",
-            "7",
-            "14"});
             this.days_input.Location = new System.Drawing.Point(163, 256);
             this.days_input.Name = "days_input";
             this.days_input.Size = new System.Drawing.Size(72, 24);
@@ -283,7 +280,7 @@
             // clientInfoBox
             // 
             this.clientInfoBox.BackColor = System.Drawing.SystemColors.Control;
-            this.clientInfoBox.Controls.Add(this.quoteCount);
+            this.clientInfoBox.Controls.Add(this.currentDate_label);
             this.clientInfoBox.Controls.Add(this.email_input);
             this.clientInfoBox.Controls.Add(this.phone_input);
             this.clientInfoBox.Controls.Add(this.contactData_input);
@@ -298,14 +295,15 @@
             this.clientInfoBox.TabStop = false;
             this.clientInfoBox.Text = "Client Info";
             // 
-            // quoteCount
+            // currentDate_label
             // 
-            this.quoteCount.AutoSize = true;
-            this.quoteCount.Location = new System.Drawing.Point(81, 305);
-            this.quoteCount.Name = "quoteCount";
-            this.quoteCount.Size = new System.Drawing.Size(93, 16);
-            this.quoteCount.TabIndex = 9;
-            this.quoteCount.Text = "Quote Count = ";
+            this.currentDate_label.AutoSize = true;
+            this.currentDate_label.Location = new System.Drawing.Point(62, 309);
+            this.currentDate_label.Name = "currentDate_label";
+            this.currentDate_label.Size = new System.Drawing.Size(74, 16);
+            this.currentDate_label.TabIndex = 9;
+            this.currentDate_label.Text = "CurentDate";
+            this.currentDate_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // email_input
             // 
@@ -331,6 +329,7 @@
             // 
             // contactData_input
             // 
+            this.contactData_input.Enabled = false;
             this.contactData_input.Location = new System.Drawing.Point(18, 179);
             this.contactData_input.Name = "contactData_input";
             this.contactData_input.Size = new System.Drawing.Size(218, 22);
@@ -373,6 +372,8 @@
             // PricingBox
             // 
             this.PricingBox.BackColor = System.Drawing.SystemColors.Control;
+            this.PricingBox.Controls.Add(this.finishDate_value);
+            this.PricingBox.Controls.Add(this.finishDate_label);
             this.PricingBox.Controls.Add(this.totalCost);
             this.PricingBox.Controls.Add(this.taxCost);
             this.PricingBox.Controls.Add(this.sumCost);
@@ -398,11 +399,11 @@
             // 
             // totalCost
             // 
-            this.totalCost.Location = new System.Drawing.Point(148, 261);
+            this.totalCost.Location = new System.Drawing.Point(148, 265);
             this.totalCost.Name = "totalCost";
             this.totalCost.Size = new System.Drawing.Size(88, 16);
             this.totalCost.TabIndex = 21;
-            this.totalCost.Text = "$412.00";
+            this.totalCost.Text = "$0.00";
             this.totalCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // taxCost
@@ -411,7 +412,7 @@
             this.taxCost.Name = "taxCost";
             this.taxCost.Size = new System.Drawing.Size(88, 16);
             this.taxCost.TabIndex = 20;
-            this.taxCost.Text = "$24.00";
+            this.taxCost.Text = "$0.00";
             this.taxCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // sumCost
@@ -420,7 +421,7 @@
             this.sumCost.Name = "sumCost";
             this.sumCost.Size = new System.Drawing.Size(88, 16);
             this.sumCost.TabIndex = 19;
-            this.sumCost.Text = "$400.00";
+            this.sumCost.Text = "$0.00";
             this.sumCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rushCost
@@ -438,7 +439,7 @@
             this.materialCost.Name = "materialCost";
             this.materialCost.Size = new System.Drawing.Size(88, 16);
             this.materialCost.TabIndex = 17;
-            this.materialCost.Text = "$200.00";
+            this.materialCost.Text = "$0.00";
             this.materialCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // drawerCost
@@ -465,7 +466,7 @@
             this.baseCost.Name = "baseCost";
             this.baseCost.Size = new System.Drawing.Size(96, 26);
             this.baseCost.TabIndex = 14;
-            this.baseCost.Text = "$200.00";
+            this.baseCost.Text = "$0.00";
             this.baseCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
@@ -540,6 +541,24 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Base Desk Price";
             // 
+            // finishDate_label
+            // 
+            this.finishDate_label.AutoSize = true;
+            this.finishDate_label.Location = new System.Drawing.Point(20, 305);
+            this.finishDate_label.Name = "finishDate_label";
+            this.finishDate_label.Size = new System.Drawing.Size(80, 16);
+            this.finishDate_label.TabIndex = 22;
+            this.finishDate_label.Text = "Finish Date: ";
+            // 
+            // finishDate_value
+            // 
+            this.finishDate_value.Location = new System.Drawing.Point(106, 302);
+            this.finishDate_value.Name = "finishDate_value";
+            this.finishDate_value.Size = new System.Drawing.Size(130, 23);
+            this.finishDate_value.TabIndex = 23;
+            this.finishDate_value.Text = "label1";
+            this.finishDate_value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Add_Quote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -608,6 +627,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label quoteCount;
+        private System.Windows.Forms.Label currentDate_label;
+        private System.Windows.Forms.Label finishDate_label;
+        private System.Windows.Forms.Label finishDate_value;
     }
 }
