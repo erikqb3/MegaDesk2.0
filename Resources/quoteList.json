@@ -42,15 +42,29 @@
     }
   },
   {
-    "customerName": "",
-    "quoteTotalPrice": 530.00,
-    "finishDate": "2022-10-11T09:01:12.5690418-06:00",
-    "contactMethod": null,
-    "contactInfo": "",
+    "customerName": "Mercau",
+    "quoteTotalPrice": 583.00,
+    "finishDate": "2022-10-13T00:01:38.9856305-06:00",
+    "contactMethod": "phone",
+    "contactInfo": "3855390322",
     "deskProperties": {
-      "width": 26,
-      "depth": 17,
-      "drawerCount": 2,
+      "width": 25,
+      "depth": 13,
+      "drawerCount": 3,
+      "material": "Oak",
+      "expectancy": 14
+    }
+  },
+  {
+    "customerName": "kj",
+    "quoteTotalPrice": 477.00,
+    "finishDate": "2022-10-13T00:53:51.5995551-06:00",
+    "contactMethod": "phone",
+    "contactInfo": "765",
+    "deskProperties": {
+      "width": 25,
+      "depth": 13,
+      "drawerCount": 1,
       "material": "Oak",
       "expectancy": 14
     }
