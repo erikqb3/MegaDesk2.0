@@ -36,10 +36,6 @@ namespace MegaDesk2._0
             .Cast<RushDays>()
             .ToList();
 
-
-
-
-
         public Add_Quote(Form mainMenu) //CONSTRUCTOR
         {
             InitializeComponent();
@@ -374,10 +370,6 @@ namespace MegaDesk2._0
 
             //quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
         }
-       
+        
     }
 }
-
-
-
-
