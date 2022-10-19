@@ -104,6 +104,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search Quotes.resx">
+      <DependentUpon>Search Quotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View All Quotes.resx">
       <DependentUpon>View All Quotes.cs</DependentUpon>
     </EmbeddedResource>

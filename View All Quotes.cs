@@ -19,9 +19,7 @@ namespace MegaDesk2._0
         {
             InitializeComponent();
             _mainMenu = mainMenu;
-
-            // Display quotes in the text box
-            // allQuotesText = 
+            loadGrid();
         }
 
         private void loadGrid()
@@ -49,33 +47,10 @@ namespace MegaDesk2._0
                     }
                     )
                         .ToList();
+
                 }
             }
         }
-
-        // private void readJson(string jsonPath)
-        // {
-        //     string existingJson;
-        //     //list QuoteList qL = new QuoteList();
-        //     List<DeskQuote> deskQuoteList = new List<DeskQuote>();
-        //     // List <DeskQuote> deskQuoteList;
-
-        //     if (File.Exists(jsonPath))
-        //     {
-        //         using (var reader = new StreamReader(jsonPath))
-        //         {
-        //             existingJson = reader.ReadToEnd();
-        //             if (existingJson.Length > 0)
-        //             {
-        //                 deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
-        //             }
-        //         }
-        //     }
-        //     deskQuoteList.Add(quoteObject);
-
-        //     var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
-        //     File.WriteAllText(jsonPath, finalQuoteList);
-        // }
 
         private void View_All_Quotes_FormClosed(object sender, FormClosedEventArgs e)
         {

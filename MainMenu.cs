@@ -37,7 +37,9 @@ namespace MegaDesk2._0
 
         private void searchQuote_btn_Click(object sender, EventArgs e)
         {
-
+            var searchQuotes = new Search_Quotes(this);
+            searchQuotes.Show();
+            this.Hide();
         }
 
         private void exit_btn_Click(object sender, EventArgs e)
