@@ -45,10 +45,5 @@ namespace MegaDesk2._0
         public DesktopMaterial material { get; set; }
         public RushDays rushDays { get; set; }
 
-
-
-        //public string DesktopMaterial DesktopMaterial { get;set }
-
-        
     }
 }

@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.allQuotesText = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.allQuotesLabel = new System.Windows.Forms.Label();
+            this.allQuotesDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.allQuotesDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // allQuotesText
-            // 
-            this.allQuotesText.AutoSize = true;
-            this.allQuotesText.Location = new System.Drawing.Point(25, 52);
-            this.allQuotesText.Name = "allQuotesText";
-            this.allQuotesText.Size = new System.Drawing.Size(131, 16);
-            this.allQuotesText.TabIndex = 0;
-            this.allQuotesText.Text = "No Quotes Available";
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(769, 52);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 390);
-            this.vScrollBar1.TabIndex = 1;
             // 
             // allQuotesLabel
             // 
@@ -59,26 +43,35 @@
             this.allQuotesLabel.TabIndex = 2;
             this.allQuotesLabel.Text = "All Quotes";
             // 
+            // allQuotesDataGrid
+            // 
+            this.allQuotesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allQuotesDataGrid.Location = new System.Drawing.Point(12, 41);
+            this.allQuotesDataGrid.Name = "allQuotesDataGrid";
+            this.allQuotesDataGrid.RowHeadersWidth = 62;
+            this.allQuotesDataGrid.RowTemplate.Height = 28;
+            this.allQuotesDataGrid.Size = new System.Drawing.Size(876, 509);
+            this.allQuotesDataGrid.TabIndex = 3;
+            // 
             // View_All_Quotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.allQuotesDataGrid);
             this.Controls.Add(this.allQuotesLabel);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.allQuotesText);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "View_All_Quotes";
             this.Text = "View_All_Quotes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.View_All_Quotes_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.allQuotesDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label allQuotesText;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label allQuotesLabel;
+        private System.Windows.Forms.DataGridView allQuotesDataGrid;
     }
 }
