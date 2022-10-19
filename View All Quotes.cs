@@ -24,29 +24,58 @@ namespace MegaDesk2._0
             // allQuotesText = 
         }
 
-        private void readJson(string jsonPath)
+        private void loadGrid()
         {
-            string existingJson;
-            //list QuoteList qL = new QuoteList();
-            List<DeskQuote> deskQuoteList = new List<DeskQuote>();
-            // List <DeskQuote> deskQuoteList;
+            var quotesFile = @"quoteList.json";
 
-            if (File.Exists(jsonPath))
+            if(File.Exists(quotesFile))
             {
-                using (var reader = new StreamReader(jsonPath))
+                using (StreamReader reader = new StreamReader(quotesFile))
                 {
-                    existingJson = reader.ReadToEnd();
-                    if (existingJson.Length > 0)
+                    // load existing quotes
+                    string quotes = reader.ReadToEnd();
+                    List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(quotes);
+                    
+                    allQuotesDataGrid.DataSource = deskQuotes.Select(d => new
                     {
-                        deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+                        Date = d.startDate,
+                        Customer = d.customerName,
+                        Depth = d.deskProperties.depth,
+                        Width = d.deskProperties.width,
+                        Drawers = d.deskProperties.drawerCount,
+                        SurfaceMaterial = d.deskProperties.material,
+                        DeliveryType = d.deskProperties.rushDays,
+                        QuoteAmount = d.quoteTotalPrice.ToString("c")
                     }
+                    )
+                        .ToList();
                 }
             }
-            deskQuoteList.Add(quoteObject);
-
-            var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
-            File.WriteAllText(jsonPath, finalQuoteList);
         }
+
+        // private void readJson(string jsonPath)
+        // {
+        //     string existingJson;
+        //     //list QuoteList qL = new QuoteList();
+        //     List<DeskQuote> deskQuoteList = new List<DeskQuote>();
+        //     // List <DeskQuote> deskQuoteList;
+
+        //     if (File.Exists(jsonPath))
+        //     {
+        //         using (var reader = new StreamReader(jsonPath))
+        //         {
+        //             existingJson = reader.ReadToEnd();
+        //             if (existingJson.Length > 0)
+        //             {
+        //                 deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+        //             }
+        //         }
+        //     }
+        //     deskQuoteList.Add(quoteObject);
+
+        //     var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+        //     File.WriteAllText(jsonPath, finalQuoteList);
+        // }
 
         private void View_All_Quotes_FormClosed(object sender, FormClosedEventArgs e)
         {
