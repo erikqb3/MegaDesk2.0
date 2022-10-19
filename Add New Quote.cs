@@ -36,10 +36,6 @@ namespace MegaDesk2._0
             .Cast<RushDays>()
             .ToList();
 
-
-
-
-
         public Add_Quote(Form mainMenu) //CONSTRUCTOR
         {
             InitializeComponent();
@@ -374,56 +370,6 @@ namespace MegaDesk2._0
 
             //quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
         }
-        private void rushOrder_no_Click(object sender, EventArgs e)
-        {
-            days_input.Text = "14";
-            rushOrder_yes.Checked = false;
-        }
-        private void rushOrder_yes_Click(object sender, EventArgs e)
-        {
-            days_input.Text = "";
-            rushOrder_no.Checked = false;
-            days_input.Text = "3";
-        }
-        private void save_btn_Click(object sender, EventArgs e)
-        {
-            //int quoteCount = new MainMenu().quoteCounter;
-
-            this.quoteCountFromMain++;
-            DeskQuote quote = this.establichQuoteDetails();
-            saveQuote(quote);
-            this.Close();
-        }
-        private void saveQuote(DeskQuote quoteObject)
-        {
-
-
-            //string jsonPath = @"../../Resources/quoteList2.json";
-            readWriteToJson(quoteObject, jsonPath);
-            Console.Write("readWrite");
-
-            //try {
-            //    readWriteToJson(quoteObject, jsonPath);
-            //    Console.Write("readWrite");
-            //}
-            //catch {
-            //    createWriteJson(quoteObject, jsonPath);
-            //    Console.Write("createWrite");
-            //}
-        }
-        private void width_input_ValueChanged(object sender, EventArgs e)
-        {
-            calculateSize();
-            calculateRushCost();
-            calculateTotals();
-
-        }
-        private void width_input_ValueChanged(object sender, EventArgs e)
-        {
-            calculateSize();
-            calculateRushCost();
-            calculateTotals();
-
-        }
+        
     }
 }
