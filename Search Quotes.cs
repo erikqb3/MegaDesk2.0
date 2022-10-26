@@ -113,19 +113,7 @@ namespace MegaDesk2._0
 
                 }
             }
-        }
-
-        // We don't need these. Delete when possible.
-        private void Search_Quotes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Search_Quotes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
+        
 
         // end
     }
