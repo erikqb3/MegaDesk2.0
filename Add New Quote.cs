@@ -147,6 +147,8 @@ namespace MegaDesk2._0
 
             DeskQuote quote = this.establichQuoteDetails();
             bool isValid = checkValidation();
+
+
             if (isValid)
             {
                 saveQuote(quote);
@@ -343,15 +345,25 @@ namespace MegaDesk2._0
             string existingJson;
             List<DeskQuote> deskQuoteList = new List<DeskQuote>();
 
-            if (File.Exists(jsonPath))
+            try
             {
                 using (var reader = new StreamReader(jsonPath))
                 {
                     existingJson = reader.ReadToEnd();
-                        deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+                    deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
                 }
-
             }
+            catch (FileNotFoundException e)
+            {
+                string jsonPath = @"quoteList.json";
+                using (var reader = new StreamReader(jsonPath))
+                {
+                    existingJson = reader.ReadToEnd();
+                    deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+                }
+            }
+
+
             deskQuoteList.Add(quoteObject);
 
             var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
