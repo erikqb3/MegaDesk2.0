@@ -54,6 +54,8 @@
             this.fullName_input = new System.Windows.Forms.TextBox();
             this.clientName_label = new System.Windows.Forms.Label();
             this.PricingBox = new System.Windows.Forms.GroupBox();
+            this.finishDate_value = new System.Windows.Forms.Label();
+            this.finishDate_label = new System.Windows.Forms.Label();
             this.totalCost = new System.Windows.Forms.Label();
             this.taxCost = new System.Windows.Forms.Label();
             this.sumCost = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.finishDate_label = new System.Windows.Forms.Label();
-            this.finishDate_value = new System.Windows.Forms.Label();
             cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.width_input)).BeginInit();
             this.deskProperties_box.SuspendLayout();
@@ -83,20 +83,20 @@
             // 
             // cancel_btn
             // 
-            cancel_btn.Location = new System.Drawing.Point(281, 415);
+            cancel_btn.Location = new System.Drawing.Point(226, 390);
             cancel_btn.Name = "cancel_btn";
-            cancel_btn.Size = new System.Drawing.Size(75, 23);
-            cancel_btn.TabIndex = 1;
+            cancel_btn.Size = new System.Drawing.Size(162, 48);
+            cancel_btn.TabIndex = 11;
             cancel_btn.Text = "Cancel";
             cancel_btn.UseVisualStyleBackColor = true;
             cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // getQuote_btn
             // 
-            this.getQuote_btn.Location = new System.Drawing.Point(461, 415);
+            this.getQuote_btn.Location = new System.Drawing.Point(426, 389);
             this.getQuote_btn.Name = "getQuote_btn";
-            this.getQuote_btn.Size = new System.Drawing.Size(75, 23);
-            this.getQuote_btn.TabIndex = 0;
+            this.getQuote_btn.Size = new System.Drawing.Size(162, 50);
+            this.getQuote_btn.TabIndex = 12;
             this.getQuote_btn.Text = "Get Quote";
             this.getQuote_btn.UseVisualStyleBackColor = true;
             this.getQuote_btn.Click += new System.EventHandler(this.save_btn_Click);
@@ -116,7 +116,7 @@
             0});
             this.width_input.Name = "width_input";
             this.width_input.Size = new System.Drawing.Size(72, 22);
-            this.width_input.TabIndex = 2;
+            this.width_input.TabIndex = 5;
             this.width_input.Value = new decimal(new int[] {
             24,
             0,
@@ -162,7 +162,7 @@
             this.rushOrder_no.Location = new System.Drawing.Point(79, 257);
             this.rushOrder_no.Name = "rushOrder_no";
             this.rushOrder_no.Size = new System.Drawing.Size(46, 20);
-            this.rushOrder_no.TabIndex = 21;
+            this.rushOrder_no.TabIndex = 10;
             this.rushOrder_no.Text = "No";
             this.rushOrder_no.UseVisualStyleBackColor = true;
             this.rushOrder_no.Click += new System.EventHandler(this.rushOrder_no_Click);
@@ -182,7 +182,7 @@
             this.material_input.Location = new System.Drawing.Point(24, 174);
             this.material_input.Name = "material_input";
             this.material_input.Size = new System.Drawing.Size(211, 24);
-            this.material_input.TabIndex = 18;
+            this.material_input.TabIndex = 8;
             this.material_input.SelectedIndexChanged += new System.EventHandler(this.material_input_SelectedIndexChanged);
             // 
             // days_label
@@ -200,7 +200,7 @@
             this.days_input.Location = new System.Drawing.Point(163, 256);
             this.days_input.Name = "days_input";
             this.days_input.Size = new System.Drawing.Size(72, 24);
-            this.days_input.TabIndex = 22;
+            this.days_input.TabIndex = 11;
             this.days_input.SelectedIndexChanged += new System.EventHandler(this.days_input_SelectedIndexChanged);
             // 
             // rushOrder_yes
@@ -209,7 +209,7 @@
             this.rushOrder_yes.Location = new System.Drawing.Point(24, 256);
             this.rushOrder_yes.Name = "rushOrder_yes";
             this.rushOrder_yes.Size = new System.Drawing.Size(52, 20);
-            this.rushOrder_yes.TabIndex = 20;
+            this.rushOrder_yes.TabIndex = 9;
             this.rushOrder_yes.Text = "Yes";
             this.rushOrder_yes.UseVisualStyleBackColor = true;
             this.rushOrder_yes.Click += new System.EventHandler(this.rushOrder_yes_Click);
@@ -247,7 +247,7 @@
             0});
             this.depth_input.Name = "depth_input";
             this.depth_input.Size = new System.Drawing.Size(72, 22);
-            this.depth_input.TabIndex = 4;
+            this.depth_input.TabIndex = 6;
             this.depth_input.Value = new decimal(new int[] {
             12,
             0,
@@ -265,7 +265,7 @@
             0});
             this.drawerCount_input.Name = "drawerCount_input";
             this.drawerCount_input.Size = new System.Drawing.Size(72, 22);
-            this.drawerCount_input.TabIndex = 6;
+            this.drawerCount_input.TabIndex = 7;
             this.drawerCount_input.ValueChanged += new System.EventHandler(this.drawerCount_input_ValueChanged);
             // 
             // width_label
@@ -311,7 +311,8 @@
             this.email_input.Location = new System.Drawing.Point(100, 113);
             this.email_input.Name = "email_input";
             this.email_input.Size = new System.Drawing.Size(62, 20);
-            this.email_input.TabIndex = 8;
+            this.email_input.TabIndex = 3;
+            this.email_input.TabStop = true;
             this.email_input.Text = "Email";
             this.email_input.UseVisualStyleBackColor = true;
             this.email_input.Click += new System.EventHandler(this.email_input_Click);
@@ -322,7 +323,8 @@
             this.phone_input.Location = new System.Drawing.Point(18, 113);
             this.phone_input.Name = "phone_input";
             this.phone_input.Size = new System.Drawing.Size(67, 20);
-            this.phone_input.TabIndex = 7;
+            this.phone_input.TabIndex = 2;
+            this.phone_input.TabStop = true;
             this.phone_input.Text = "Phone";
             this.phone_input.UseVisualStyleBackColor = true;
             this.phone_input.Click += new System.EventHandler(this.phone_input_Click);
@@ -333,7 +335,7 @@
             this.contactData_input.Location = new System.Drawing.Point(18, 179);
             this.contactData_input.Name = "contactData_input";
             this.contactData_input.Size = new System.Drawing.Size(218, 22);
-            this.contactData_input.TabIndex = 6;
+            this.contactData_input.TabIndex = 4;
             // 
             // contactData_label
             // 
@@ -396,6 +398,24 @@
             this.PricingBox.TabIndex = 13;
             this.PricingBox.TabStop = false;
             this.PricingBox.Text = "Quote";
+            // 
+            // finishDate_value
+            // 
+            this.finishDate_value.Location = new System.Drawing.Point(106, 302);
+            this.finishDate_value.Name = "finishDate_value";
+            this.finishDate_value.Size = new System.Drawing.Size(130, 23);
+            this.finishDate_value.TabIndex = 23;
+            this.finishDate_value.Text = "FinishDate";
+            this.finishDate_value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // finishDate_label
+            // 
+            this.finishDate_label.AutoSize = true;
+            this.finishDate_label.Location = new System.Drawing.Point(20, 305);
+            this.finishDate_label.Name = "finishDate_label";
+            this.finishDate_label.Size = new System.Drawing.Size(80, 16);
+            this.finishDate_label.TabIndex = 22;
+            this.finishDate_label.Text = "Finish Date: ";
             // 
             // totalCost
             // 
@@ -540,24 +560,6 @@
             this.label8.Size = new System.Drawing.Size(108, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Base Desk Price";
-            // 
-            // finishDate_label
-            // 
-            this.finishDate_label.AutoSize = true;
-            this.finishDate_label.Location = new System.Drawing.Point(20, 305);
-            this.finishDate_label.Name = "finishDate_label";
-            this.finishDate_label.Size = new System.Drawing.Size(80, 16);
-            this.finishDate_label.TabIndex = 22;
-            this.finishDate_label.Text = "Finish Date: ";
-            // 
-            // finishDate_value
-            // 
-            this.finishDate_value.Location = new System.Drawing.Point(106, 302);
-            this.finishDate_value.Name = "finishDate_value";
-            this.finishDate_value.Size = new System.Drawing.Size(130, 23);
-            this.finishDate_value.TabIndex = 23;
-            this.finishDate_value.Text = "label1";
-            this.finishDate_value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Add_Quote
             // 

@@ -145,19 +145,34 @@ namespace MegaDesk2._0
         {
             //int quoteCount = new MainMenu().quoteCounter;
 
-            DeskQuote quote = this.establichQuoteDetails();
-            bool isValid = checkValidation();
 
-
-            if (isValid)
+            try
             {
-                saveQuote(quote);
-                this.Close();
+                DeskQuote quote = this.establichQuoteDetails();
+                bool isValid = checkValidation();
+
+
+                if (isValid)
+                {
+                    saveQuote(quote);
+                    this.Close();
+                }
+                else
+                {
+                    var invalidInfo = new InvalidInfo(this);
+                    invalidInfo.Show();
+                }
             }
-            else
+            catch (InvalidCastException error)
             {
-                var invalidInfo = new InvalidInfo(this);
-                invalidInfo.Show();
+                if (error.Data == null)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw;
+                }
             }
             
         }
@@ -336,38 +351,65 @@ namespace MegaDesk2._0
             deskProperties.rushDays = (RushDays)days_input.SelectedIndex;
 
             dq.deskProperties = deskProperties;
-
+            Console.WriteLine(dq);
             return dq;
         }
         private void saveQuote(DeskQuote quoteObject)
         {
 
+
             string existingJson;
             List<DeskQuote> deskQuoteList = new List<DeskQuote>();
 
-            try
+            if (File.Exists(jsonPath))
             {
                 using (var reader = new StreamReader(jsonPath))
                 {
                     existingJson = reader.ReadToEnd();
                     deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
                 }
-            }
-            catch (FileNotFoundException e)
-            {
-                string jsonPath = @"quoteList.json";
-                using (var reader = new StreamReader(jsonPath))
-                {
-                    existingJson = reader.ReadToEnd();
-                    deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
-                }
-            }
 
-
+            }
             deskQuoteList.Add(quoteObject);
-
             var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
             File.WriteAllText(jsonPath, finalQuoteList);
+
+
+
+            //try
+            //{
+            //    using (var reader = new StreamReader(jsonPath))
+            //    {
+            //        existingJson = reader.ReadToEnd();
+            //        deskQuoteList = JsonConvert.DeserializeObject<List<DeskQuote>>(existingJson);
+            //    }
+            //    deskQuoteList.Add(quoteObject);
+            //    var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+            //    File.WriteAllText(jsonPath, finalQuoteList);
+            //}
+            //catch (FileNotFoundException e)
+            //{
+            //    string jsonPath = @"quoteList.json";
+            //    File.WriteAllText(jsonPath, "");
+            //    using (var reader = new StreamReader(jsonPath))
+            //    deskQuoteList.Add(quoteObject);
+            //    var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+            //    File.WriteAllText(jsonPath, finalQuoteList);
+            //}
+            //catch (NullReferenceException e)
+            //{
+            //    string jsonPath = @"quoteList.json";
+            //    File.WriteAllText(jsonPath, "");
+            //    using (var reader = new StreamReader(jsonPath))
+            //    deskQuoteList.Add(quoteObject);
+            //    var finalQuoteList = JsonConvert.SerializeObject(deskQuoteList, Formatting.Indented);
+            //    File.WriteAllText(jsonPath, finalQuoteList);
+            //}
+
+
+
+
+
 
 
 
@@ -382,6 +424,6 @@ namespace MegaDesk2._0
 
             //quoteCount.Text = existingJson_Object.quoteTotalPrice.ToString(); //WORKS
         }
-        
+
     }
 }
